@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Oct 08 10:41:58 2018
+# Process ID: 4964
+# Log file: D:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.runs/impl_1/MainSystem.vdi
+# Journal file: D:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source MainSystem.tcl -notrace
