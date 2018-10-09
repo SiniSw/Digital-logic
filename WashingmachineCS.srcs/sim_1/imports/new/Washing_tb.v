@@ -30,21 +30,43 @@ module Washing_tb();
     parameter DELY=10;
     parameter LDELY=1000;
     MainSystem WM(Reset,CLK,Control,SP,CWS,seg,an,RL,SPL,XDL,PXL,TSL,BUL,JSL,PSL);
-    always #(DELY/10) CLK=~CLK;
+    always #(DELY/2) CLK=~CLK;
     initial begin
        CLK=0;
-       Reset=0;
-       Control=0;
-       CWS=3'b101;
-       #(DELY/5) Reset=1;
-       #(DELY/5) Reset=0;
-//       Control=1;
-//       Control=0;
+    end
+    initial begin
+        Reset=0;
+        Control=0;
+        SP=0;
+        CWS=3'b101;
+        #10 Reset=1;
+        #10  Reset=0;
+        
+        #60 Control=1;
+        #20 Control=0;
+        #40 Control=1;
+        #20 Control=0;
+        #40 Control=1;
+        #20 Control=0;
+        #40 Control=1;
+        #20 Control=0;
+        #40 Control=1;
+        #20 Control=0;
+        #40 Control=1;
+        #20 Control=0;
+        
+        #30 SP=1;
+        #10 SP=0;
+        #100 Control=1;
+        #10 Control=0;
+     
+        #10 SP=1;
+        #10 SP=0;
+        #100 Control=1;
+        #10 Control=0;
 
-       #(DELY/5) SP=0;
-
-       Control=1;
-       #(DELY/5) Control=0;
-       SP=1;
+        #10 SP=1;
+        #10 SP=0;
+ 
     end
 endmodule

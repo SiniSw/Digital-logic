@@ -30,10 +30,10 @@ module MainSystem(
     parameter drain2=4'b1000;
     parameter dry2  =4'b1001;
     parameter dor   =4'b1111;
-    parameter SEC   =31'd30000000;   // sec/clk
+    parameter SEC   =31'd10;   // sec/clk 30000000
     parameter AN_CLK=16'd1000;
-    parameter LED_CLK=31'd10000000;
-    parameter BUL_CLK=31'd20000000;
+    parameter LED_CLK=31'd2; //10000000
+    parameter BUL_CLK=31'd2; //20000000
     reg flag1,flag2;
     reg Control_p;
     reg reset_p;
@@ -76,6 +76,7 @@ module MainSystem(
         flag1=1'b0;
         flag2=1'b0;
         count=0;
+        led_count=0;
         b_time=0;
         end  
     always@(posedge CLK)
