@@ -30,7 +30,10 @@ module MainSystem(
     parameter drain2=4'b1000;
     parameter dry2  =4'b1001;
     parameter dor   =4'b1111;
-    
+    parameter SEC   =31'd30000000;   // sec/clk
+    parameter AN_CLK=16'd1000;
+    parameter LED_CLK=31'd10000000;
+    parameter BUL_CLK=31'd20000000;
     reg flag1,flag2;
     reg Control_p;
     reg reset_p;
@@ -40,20 +43,22 @@ module MainSystem(
     reg [4:0]now;
     reg [4:0]next;
     reg [2:0]state;
+    reg [31:0]led_count;
     reg [15:0]count;
-    reg flag;
     reg [5:0]t_count;
-    reg [5:0]sec;
+    reg [31:0]sec;
     reg [4:0]n_count;
     reg w,d;
     reg [1:0]b;
+    reg [31:0]b_time;
     reg [1:0]led[0:2];
-    reg [1:0]b_count;
+    reg [2:0]b_count;
     wire [3:0]t_count_s;
     wire [3:0]t_count_t;
     wire [3:0]n_count_s;
     wire [3:0]n_count_t;
     reg [6:0]data_out[0:5];
+    reg [2:0]WLS;
     assign t_count_s=t_count%4'd10;
     assign t_count_t=t_count/4'd10;
     assign n_count_s=n_count%4'd10;
@@ -68,18 +73,20 @@ module MainSystem(
         Reset=1'b0;
         reset_p=1'b0;
         SP_p=1'b0;
-        flag=1'b0;
+        flag1=1'b0;
+        flag2=1'b0;
         count=0;
+        b_time=0;
         end  
     always@(posedge CLK)
         begin 
             count=count+1;
-            if(count==1000)
-               begin flag<=~flag;
+            if(count==AN_CLK)
+               begin flag1<=~flag1;
                      count<=0;
                end
         end  
-    always@(posedge flag)
+    always@(posedge flag1)
         begin
             case(an)
                 8'b11111110:begin seg<=data_out[0];an<=8'b01111111; end
@@ -96,11 +103,23 @@ module MainSystem(
     always@(CWS)
         begin 
             case(CWS)
-                3'b010:begin data_out[4]<=7'b1000000;data_out[5]<=7'b0100100; end
-                3'b011:begin data_out[4]<=7'b1000000;data_out[5]<=7'b0110000; end
-                3'b100:begin data_out[4]<=7'b1000000;data_out[5]<=7'b0011010; end
-                3'b101:begin data_out[4]<=7'b1000000;data_out[5]<=7'b0010010; end
-               default:begin data_out[4]<=7'b1111111;data_out[5]<=7'b1111111; end
+                3'b010:begin data_out[4]<=7'b0100100; end
+                3'b011:begin data_out[4]<=7'b0110000; end
+                3'b100:begin data_out[4]<=7'b0011001; end
+                3'b101:begin data_out[4]<=7'b0010010; end
+               default:begin data_out[4]<=7'b1111111; end
+            endcase
+        end
+    always@(WLS)
+        begin
+            case(WLS)
+                3'b000:begin data_out[5]<=7'b1000000; end
+                3'b001:begin data_out[5]<=7'b1111001; end
+                3'b010:begin data_out[5]<=7'b0100100; end
+                3'b011:begin data_out[5]<=7'b0110000; end
+                3'b100:begin data_out[5]<=7'b0011001; end
+                3'b101:begin data_out[5]<=7'b0010010; end
+               default:begin data_out[5]<=7'b1111111; end
             endcase
         end
     always@(t_count_t)
@@ -110,7 +129,7 @@ module MainSystem(
                     4'b0001:data_out[0]=7'b1111001;
                     4'b0010:data_out[0]=7'b0100100;
                     4'b0011:data_out[0]=7'b0110000;
-                    4'b0100:data_out[0]=7'b0011010;
+                    4'b0100:data_out[0]=7'b0011001;
                     4'b0101:data_out[0]=7'b0010010;
                     4'b0110:data_out[0]=7'b0000010;
                     4'b0111:data_out[0]=7'b1111000; 
@@ -122,49 +141,49 @@ module MainSystem(
     always@(t_count_s)
         begin
             case(t_count_s)
-                    4'b0000:data_out[0]=7'b1000000;
-                    4'b0001:data_out[0]=7'b1111001;
-                    4'b0010:data_out[0]=7'b0100100;
-                    4'b0011:data_out[0]=7'b0110000;
-                    4'b0100:data_out[0]=7'b0011010;
-                    4'b0101:data_out[0]=7'b0010010;
-                    4'b0110:data_out[0]=7'b0000010;
-                    4'b0111:data_out[0]=7'b1111000; 
-                    4'b1000:data_out[0]=7'b0000000;
-                    4'b1001:data_out[0]=7'b0011000;
-                    default:data_out[0]=7'b1111111; 
+                    4'b0000:data_out[1]=7'b1000000;
+                    4'b0001:data_out[1]=7'b1111001;
+                    4'b0010:data_out[1]=7'b0100100;
+                    4'b0011:data_out[1]=7'b0110000;
+                    4'b0100:data_out[1]=7'b0011001;
+                    4'b0101:data_out[1]=7'b0010010;
+                    4'b0110:data_out[1]=7'b0000010;
+                    4'b0111:data_out[1]=7'b1111000; 
+                    4'b1000:data_out[1]=7'b0000000;
+                    4'b1001:data_out[1]=7'b0011000;
+                    default:data_out[1]=7'b1111111; 
             endcase
         end
     always@(n_count_t)
             begin
                 case(n_count_t)
-                    4'b0000:data_out[0]=7'b1000000;
-                    4'b0001:data_out[0]=7'b1111001;
-                    4'b0010:data_out[0]=7'b0100100;
-                    4'b0011:data_out[0]=7'b0110000;
-                    4'b0100:data_out[0]=7'b0011010;
-                    4'b0101:data_out[0]=7'b0010010;
-                    4'b0110:data_out[0]=7'b0000010;
-                    4'b0111:data_out[0]=7'b1111000; 
-                    4'b1000:data_out[0]=7'b0000000;
-                    4'b1001:data_out[0]=7'b0011000;
-                    default:data_out[0]=7'b1111111; 
+                    4'b0000:data_out[2]=7'b1000000;
+                    4'b0001:data_out[2]=7'b1111001;
+                    4'b0010:data_out[2]=7'b0100100;
+                    4'b0011:data_out[2]=7'b0110000;
+                    4'b0100:data_out[2]=7'b0011001;
+                    4'b0101:data_out[2]=7'b0010010;
+                    4'b0110:data_out[2]=7'b0000010;
+                    4'b0111:data_out[2]=7'b1111000; 
+                    4'b1000:data_out[2]=7'b0000000;
+                    4'b1001:data_out[2]=7'b0011000;
+                    default:data_out[2]=7'b1111111; 
                 endcase
             end   
     always@(n_count_s)
                 begin
                     case(n_count_s)                   
-                    4'b0000:data_out[0]=7'b1000000;
-                    4'b0001:data_out[0]=7'b1111001;
-                    4'b0010:data_out[0]=7'b0100100;
-                    4'b0011:data_out[0]=7'b0110000;
-                    4'b0100:data_out[0]=7'b0011010;
-                    4'b0101:data_out[0]=7'b0010010;
-                    4'b0110:data_out[0]=7'b0000010;
-                    4'b0111:data_out[0]=7'b1111000; 
-                    4'b1000:data_out[0]=7'b0000000;
-                    4'b1001:data_out[0]=7'b0011000;
-                    default:data_out[0]=7'b1111111; 
+                    4'b0000:data_out[3]=7'b1000000;
+                    4'b0001:data_out[3]=7'b1111001;
+                    4'b0010:data_out[3]=7'b0100100;
+                    4'b0011:data_out[3]=7'b0110000;
+                    4'b0100:data_out[3]=7'b0011001;
+                    4'b0101:data_out[3]=7'b0010010;
+                    4'b0110:data_out[3]=7'b0000010;
+                    4'b0111:data_out[3]=7'b1111000; 
+                    4'b1000:data_out[3]=7'b0000000;
+                    4'b1001:data_out[3]=7'b0011000;
+                    default:data_out[3]=7'b1111111; 
                     endcase
                 end            
 //    always@(reset)
@@ -184,24 +203,32 @@ module MainSystem(
 //                    SPL<=0;
 //                end
 //         end
-    always@(posedge CLK)
-         begin
-            case(b)
-                2'b00:begin BUL<=0;end
-                2'b01:begin BUL<=1;b_count<=1;b<=2'b11; end
-                2'b10:begin BUL<=1;b_count<=3;b<=2'b11; end
-                2'b11:begin BUL=0;b_count=b_count-1;
-                        if(b_count==0)begin b<=2'b00; end
-                        else begin BUL<=1; end
-                      end
-            endcase          
-         end
+//    always@(posedge CLK)
+//         begin
+//            case(b)
+//                2'b00:begin BUL<=0;end
+//                2'b01:begin BUL<=1;b_count<=1;b<=2'b11; end
+//                2'b10:begin BUL<=1;b_count<=3;b<=2'b11; end
+//                2'b11:begin BUL=0;b_count=b_count-1;
+//                        if(b_count==0)begin b<=2'b00; end
+//                        else begin BUL<=1; end
+//                      end
+//            endcase          
+//         end
 //    always@(state)
 //        begin led[0]<={1'b0,state[0]};
 //              led[1]<={1'b0,state[1]};
 //              led[2]<={1'b0,state[2]};  
 //        end
-    always@(CLK)
+    always@(posedge CLK)
+        begin 
+            led_count=led_count+1;
+            if(led_count==LED_CLK)
+               begin flag2<=~flag2;
+                     led_count<=0;
+               end
+        end  
+    always@(posedge flag2)
         begin 
             case(led[0])
                 2'b00:TSL=0;
@@ -219,43 +246,43 @@ module MainSystem(
                 2'b10:XDL=~XDL;
             endcase
        end 
-    always@(posedge CLK)
-        begin 
-        if(SP_p==1'b0&&SP==1'b1)begin
-             b<=2'b01;
-             if(SPL&&Reset)SPL=0;
-                else SPL=1;
-            end
-        SP_p<=SP;
-        end
-    always@(posedge CLK)
-        begin
-        if(Reset==1&&SPL==0)begin
-            if(Control_p==1'b0&&Control==1'b1) begin
-                 b=2'b01;
-             case(state)
-                 3'b111:begin state=3'b100;next=idle;t_count=9+CWS; end
-                 3'b100:begin state=3'b110;next=idle;t_count=21+2*CWS; end
-                 3'b110:begin state=3'b010;next=idle;t_count=12+CWS; end
-                 3'b010:begin state=3'b011;next=idle;t_count=18+CWS; end
-                 3'b011:begin state=3'b001;next=idle;t_count=6; end
-                 3'b001:begin state=3'b111;next=idle;t_count=27+2*CWS; end
-             endcase
-                led[0]={1'b0,state[0]};
-                led[1]={1'b0,state[1]};
-                led[2]={1'b0,state[2]};  
-             end
-         end
-            Control_p<=Control;  
-        end
+//    always@(posedge CLK)
+//        begin 
+//        if(SP_p==1'b0&&SP==1'b1)begin
+//             b<=2'b01;
+//             if(SPL&&Reset)SPL=0;
+//                else SPL=1;
+//            end
+//        SP_p<=SP;
+//        end
+//    always@(posedge CLK)
+//        begin
+//        if(Reset==1&&SPL==0)begin
+//            if(Control_p==1'b0&&Control==1'b1) begin
+//                 b=2'b01;
+//             case(state)
+//                 3'b111:begin state=3'b100;next=idle;t_count=9+CWS; end
+//                 3'b100:begin state=3'b110;next=idle;t_count=21+2*CWS; end
+//                 3'b110:begin state=3'b010;next=idle;t_count=12+CWS; end
+//                 3'b010:begin state=3'b011;next=idle;t_count=18+CWS; end
+//                 3'b011:begin state=3'b001;next=idle;t_count=6; end
+//                 3'b001:begin state=3'b111;next=idle;t_count=27+2*CWS; end
+//             endcase
+//                led[0]={1'b0,state[0]};
+//                led[1]={1'b0,state[1]};
+//                led[2]={1'b0,state[2]};  
+//             end
+//         end
+//            Control_p<=Control;  
+//        end
 //    always@(posedge CLK)
 //        begin 
 //        if(reset_p==1'b0&&reset==1'b1)
 //            Reset=~Reset;
 //        reset_p<=reset;
 //        end    
-    always@(posedge CLK)
-        begin
+//    always@(posedge CLK)
+/*        begin
         if(Reset_p!=Reset)begin
         if(Reset)begin w<=0;d<=0;b<=0;
                sec<=6'b111100;
@@ -277,7 +304,7 @@ module MainSystem(
                 end
          end
          Reset_p<=Reset; 
-        end                            
+        end                  */          
     always@(negedge CLK)
         begin
 /*           reset_p<=reset;
@@ -290,7 +317,66 @@ module MainSystem(
         begin
         if(reset_p==1'b0&&reset==1'b1)
             Reset=~Reset;
-        reset_p<=reset;        
+        if(Reset_p!=Reset)begin
+        if(Reset)begin w<=0;d<=0;b<=0;
+               sec<=SEC;
+               t_count<=21+4*CWS;
+               next<=idle;
+               SPL<=0;
+               state=3'b111;
+               led[0]={1'b0,state[0]};
+               led[1]={1'b0,state[1]};
+               led[2]={1'b0,state[2]};  
+               end
+           else begin  w<=0;d<=0;b<=0;
+                       t_count<=0;n_count<=0;
+                       SPL<=0;
+                       state=3'b000;
+                       led[0]={1'b0,state[0]};
+                       led[1]={1'b0,state[1]};
+                       led[2]={1'b0,state[2]};                         
+                end
+         end
+         if(Reset==1&&SPL==0)begin
+             if(Control_p==1'b0&&Control==1'b1) begin
+                  b=2'b01;
+              case(state)
+                  3'b111:begin state=3'b100;next=idle;t_count=9+CWS; end
+                  3'b100:begin state=3'b110;next=idle;t_count=18+3*CWS; end
+                  3'b110:begin state=3'b010;next=idle;t_count=9+2*CWS; end
+                  3'b010:begin state=3'b011;next=idle;t_count=12+3*CWS; end
+                  3'b011:begin state=3'b001;next=idle;t_count=3+CWS; end
+                  3'b001:begin state=3'b111;next=idle;t_count=21+4*CWS; end
+                  default: begin state=3'b111;next=idle;t_count=21+4*CWS; end
+              endcase
+                 WLS=0;sec=SEC;
+                 n_count=0;
+                 led[0]={1'b0,state[0]};
+                 led[1]={1'b0,state[1]};
+                 led[2]={1'b0,state[2]};  
+              end
+          end
+         if(Reset==1)begin
+         if(SP_p==1'b0&&SP==1'b1)begin
+               b<=2'b01;
+               if(SPL&&Reset)SPL=0;
+                  else SPL=1;
+             end
+         end
+         SP_p<=SP;
+         Control_p<=Control;  
+         reset_p<=reset;
+         Reset_p<=Reset;
+         case(b)
+             2'b00:begin BUL<=0;end
+             2'b01:begin BUL<=1;b_count<=1;b<=2'b11; end
+             2'b10:begin BUL<=1;b_count<=5;b<=2'b11; end
+             2'b11:begin 
+                     b_time<=b_time+1;
+                     if(b_time>=BUL_CLK)begin BUL<=~BUL;b_count<=b_count-1;b_time<=0; end
+                     if(b_count==0)begin BUL<=0; b<=2'b00; end
+             end
+         endcase           
         if(Reset&&SPL)begin
             case(now)
                 idle:if(state[2])begin w<=1;d<=0;b<=0;
@@ -299,12 +385,14 @@ module MainSystem(
                              next<=water1;
                              end
                   else begin if(state[1])begin w<=0;d<=1;b<=0;
-                                    n_count<=CWS+12;
+                                    n_count<=2*CWS+9;
+                                    WLS<=CWS;
                                     led[1]<=2;
                                     next<=drain1;
                                    end
                     else begin w<=0;d<=1;b<=0;
-                          n_count<=6;
+                          WLS<=CWS;
+                          n_count<=3+CWS;
                           led[0]<=2;
                           next<=drain2;
                          end
@@ -314,26 +402,27 @@ module MainSystem(
                     end 
                    else begin  sec=sec-1;
                       if(sec==0)begin n_count<=n_count-1;
+                                      WLS<=WLS+1;
                                       t_count<=t_count-1;
-                                      sec=6'b111100;
+                                      sec=SEC;
                                 end
                          end 
             wash:if(n_count==0)                  
                     begin led[2]=0;
                     if(state[1]==1)begin 
                         w<=0;d<=1;b<=0;
-                        n_count<=12+CWS;
+                        n_count<=9+2*CWS;
                         led[1]<=2;
                         next<=drain1;
                         end
-                    else begin w<=0;d<=0;b<=2; next<=dor;
-                              sec<=10;
+                    else begin w<=0;d<=0;b<=2'b10;led[2]<=0; next<=dor;
+                              sec<=10*SEC;
                          end 
                     end                          
                    else begin sec=sec-1;
                    if(sec==0)begin n_count<=n_count-1;
                                    t_count<=t_count-1;
-                                   sec=6'b111100;
+                                   sec<=SEC;
                              end
                         end
             drain1:if(n_count==9+CWS)                    
@@ -341,8 +430,9 @@ module MainSystem(
                     end 
                    else begin  sec=sec-1;
                       if(sec==0)begin n_count<=n_count-1;
+                                      WLS<=WLS-1;
                                       t_count<=t_count-1;
-                                      sec=6'b111100;
+                                      sec<=SEC;
                                 end
                          end 
             dry1:if(n_count==6+CWS)                    
@@ -351,7 +441,7 @@ module MainSystem(
                    else begin  sec=sec-1;
                       if(sec==0)begin n_count<=n_count-1;
                                       t_count<=t_count-1;
-                                      sec=6'b111100;
+                                      sec<=SEC;
                                 end
                          end         
             water2:if(n_count==6)                    
@@ -359,26 +449,27 @@ module MainSystem(
                      end 
                    else begin  sec=sec-1;
                      if(sec==0)begin n_count<=n_count-1;
+                                     WLS<=WLS+1;
                                      t_count<=t_count-1;
-                                     sec=6'b111100;
+                                     sec<=SEC;
                                end
                         end 
             rinse:if(n_count==0)                  
                    begin led[1]=0;
                    if(state[0]==1)begin 
                       w<=0;d<=1;b<=0;
-                      n_count<=6;
+                      n_count<=3+CWS;
                       led[0]<=2;
                       next<=drain2;
                       end
-                   else begin w<=0;d<=0;b<=2; next<=dor; 
-                            sec<=10;
+                   else begin w<=0;d<=0;b<=2'b10;led[1]<=0; next<=dor; 
+                            sec<=10*SEC;
                         end
                    end                         
                   else begin  sec=sec-1;
                      if(sec==0)begin n_count<=n_count-1;
                                      t_count<=t_count-1;
-                                     sec=6'b111100;
+                                     sec<=SEC;
                                end
                         end 
              drain2:if(n_count==3)                    
@@ -386,18 +477,19 @@ module MainSystem(
                            end 
                    else begin  sec=sec-1;
                              if(sec==0)begin n_count<=n_count-1;
+                                             WLS<=WLS-1;
                                              t_count<=t_count-1;
-                                             sec=6'b111100;
+                                             sec<=SEC;
                                        end
                                 end 
              dry2:if(n_count==0)                    
-                           begin w<=0;d<=0;b<=2; next<=dor; 
-                                 sec<=10;
+                           begin w<=0;d<=0;b<=2'b10;led[0]<=0; next<=dor; 
+                                 sec<=10*SEC;
                            end 
                    else begin  sec=sec-1;
                              if(sec==0)begin n_count<=n_count-1;
                                              t_count<=t_count-1;
-                                             sec=6'b111100;
+                                             sec<=SEC;
                                        end
                                 end      
              default: begin sec=sec-1;

@@ -1,6 +1,6 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ñ¸À×ÏÂÔØ/Digital-logic-master/WashingmachineCS/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MainSystem
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ñ¸À×ÏÂÔØ/Digital-logic-master/WashingmachineCS/WashingmachineCS.srcs/sim_1/imports/new/Washing_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-logic-master/WashingmachineCS.srcs/sim_1/imports/new/Washing_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Washing_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ñ¸À×ÏÂÔØ/Digital-logic-master/WashingmachineCS/WashingmachineCS.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-logic-master/WashingmachineCS.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
