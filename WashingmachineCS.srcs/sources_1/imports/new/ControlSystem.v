@@ -40,6 +40,8 @@ module MainSystem(
     reg [4:0]now;
     reg [4:0]next;
     reg [2:0]state;
+    reg [15:0]count;
+    reg flag;
     reg [5:0]t_count;
     reg [5:0]sec;
     reg [4:0]n_count;
@@ -66,8 +68,18 @@ module MainSystem(
         Reset=1'b0;
         reset_p=1'b0;
         SP_p=1'b0;
+        flag=1'b0;
+        count=0;
         end  
     always@(posedge CLK)
+        begin 
+            count=count+1;
+            if(count==1000)
+               begin flag<=~flag;
+                     count<=0;
+               end
+        end  
+    always@(posedge flag)
         begin
             case(an)
                 8'b11111110:begin seg<=data_out[0];an<=8'b01111111; end
