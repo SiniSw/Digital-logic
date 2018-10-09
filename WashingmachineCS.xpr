@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="5" Path="D:/迅雷下载/Digital-logic-master/WashingmachineCS/WashingmachineCS.xpr">
+<Project Version="7" Minor="5" Path="D:/Digital-logic-master/WashingmachineCS.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="bf80ae821b31469e81cc31f53d0072ff"/>

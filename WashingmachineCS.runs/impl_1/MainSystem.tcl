@@ -44,6 +44,8 @@ proc step_failed { step } {
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set rc [catch {
@@ -51,12 +53,12 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
   debug::add_scope template.lib 1
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir D:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.cache/wt [current_project]
-  set_property parent.project_path D:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.xpr [current_project]
-  set_property ip_repo_paths d:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.cache/ip [current_project]
-  set_property ip_output_repo d:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.cache/ip [current_project]
-  add_files -quiet D:/я╦ювобть/Digital-logic-master/WashingmachineCS/WashingmachineCS.runs/synth_1/MainSystem.dcp
-  read_xdc D:/я╦ювобть/Digital-logic-master/WashingmachineCS/Nexys4DDR_Master.xdc
+  set_property webtalk.parent_dir D:/Digital-logic-master/WashingmachineCS.cache/wt [current_project]
+  set_property parent.project_path D:/Digital-logic-master/WashingmachineCS.xpr [current_project]
+  set_property ip_repo_paths d:/Digital-logic-master/WashingmachineCS.cache/ip [current_project]
+  set_property ip_output_repo d:/Digital-logic-master/WashingmachineCS.cache/ip [current_project]
+  add_files -quiet D:/Digital-logic-master/WashingmachineCS.runs/synth_1/MainSystem.dcp
+  read_xdc D:/Digital-logic-master/Nexys4DDR_Master.xdc
   link_design -top MainSystem -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
