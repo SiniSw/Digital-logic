@@ -26,10 +26,10 @@ module MainSystem(
     parameter drain2=4'b1000;
     parameter dry2  =4'b1001;
     parameter dor   =4'b1111;
-    parameter SEC   =31'd10;   // sec/clk 30000000  sim/10
+    parameter SEC   =31'd30000000;   // sec/clk 30000000  sim/10
     parameter AN_CLK=16'd1000;
-    parameter LED_CLK=31'd2; //10000000   sim/2
-    parameter BUL_CLK=31'd2; //20000000   sim/2
+    parameter LED_CLK=31'd10000000; //10000000   sim/2
+    parameter BUL_CLK=31'd20000000; //20000000   sim/2
     reg flag1,flag2;
     reg Control_p;
     reg reset_p;
@@ -221,6 +221,8 @@ module MainSystem(
         if(Reset)begin w<=0;d<=0;b<=0;
                sec<=SEC;
                t_count<=21+4*CWS;
+               n_count<=0;
+               WLS<=0;
                next<=idle;
                SPL<=0;
                state=3'b111;
@@ -281,6 +283,7 @@ module MainSystem(
             case(now)
                 idle:if(state[2])begin w<=1;d<=0;b<=0;
                              n_count<=CWS+9;
+                             WLS=0;
                              led[2]<=2;
                              next<=water1;
                              end
@@ -304,7 +307,7 @@ module MainSystem(
                       if(sec==0)begin n_count<=n_count-1;
                                       WLS<=WLS+1;
                                       t_count<=t_count-1;
-                                      sec=SEC;
+                                      sec<=SEC;
                                 end
                          end 
             wash:if(n_count==0)                  
