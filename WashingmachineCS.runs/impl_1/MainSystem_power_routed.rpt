@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Tue Oct 09 16:55:38 2018
-| Host             : Hust053 running 64-bit Service Pack 1  (build 7601)
+| Date             : Wed Oct 10 15:35:48 2018
+| Host             : PC-WSD running 64-bit major release  (build 9200)
 | Command          : report_power -file MainSystem_power_routed.rpt -pb MainSystem_power_summary_routed.pb
 | Design           : MainSystem
 | Device           : xc7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.130 |
-| Dynamic (W)              | 0.033 |
+| Total On-Chip Power (W)  | 0.123 |
+| Dynamic (W)              | 0.026 |
 | Device Static (W)        | 0.097 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 84.4  |
@@ -50,16 +50,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.008 |     1519 |       --- |             --- |
-|   LUT as Logic |     0.008 |     1131 |     63400 |            1.78 |
-|   CARRY4       |    <0.001 |       39 |     15850 |            0.25 |
-|   Register     |    <0.001 |      171 |    126800 |            0.13 |
-|   F7/F8 Muxes  |    <0.001 |       15 |     63400 |            0.02 |
+| Slice Logic    |     0.006 |     1288 |       --- |             --- |
+|   LUT as Logic |     0.006 |      942 |     63400 |            1.49 |
+|   CARRY4       |    <0.001 |       40 |     15850 |            0.25 |
+|   Register     |    <0.001 |      177 |    126800 |            0.14 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.010 |     1398 |       --- |             --- |
-| I/O            |     0.012 |       30 |       210 |           14.29 |
+| Signals        |     0.007 |     1179 |       --- |             --- |
+| I/O            |     0.010 |       30 |       210 |           14.29 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.130 |          |           |                 |
+| Total          |     0.123 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,7 +68,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.036 |       0.021 |      0.015 |
+| Vccint    |       1.000 |     0.031 |       0.016 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -138,7 +137,7 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| MainSystem |     0.033 |
+| MainSystem |     0.026 |
 +------------+-----------+
 
 

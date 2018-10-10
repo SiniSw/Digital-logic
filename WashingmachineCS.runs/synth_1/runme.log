@@ -2,6 +2,7 @@
 *** Running vivado
     with args -log MainSystem.vds -m64 -mode batch -messageDb vivado.pb -notrace -source MainSystem.tcl
 
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
 
 ****** Vivado v2015.2 (64-bit)
   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
@@ -14,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 261.000 ; gain = 88.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 264.332 ; gain = 91.656
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'MainSystem' [D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:2]
+INFO: [Synth 8-638] synthesizing module 'MainSystem' [C:/Users/ForeverWSD/Desktop/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:2]
 	Parameter idle bound to: 4'b0000 
 	Parameter water1 bound to: 4'b0001 
 	Parameter wash bound to: 4'b0011 
@@ -31,12 +32,12 @@ INFO: [Synth 8-638] synthesizing module 'MainSystem' [D:/Digital-logic-master/Wa
 	Parameter AN_CLK bound to: 16'b0000001111101000 
 	Parameter LED_CLK bound to: 31'b0000000100110001001011010000000 
 	Parameter BUL_CLK bound to: 31'b0000001001100010010110100000000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:233]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:238]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:243]
-INFO: [Synth 8-256] done synthesizing module 'MainSystem' (1#1) [D:/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ForeverWSD/Desktop/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:196]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ForeverWSD/Desktop/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:201]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ForeverWSD/Desktop/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:206]
+INFO: [Synth 8-256] done synthesizing module 'MainSystem' (1#1) [C:/Users/ForeverWSD/Desktop/Digital-logic-master/WashingmachineCS.srcs/sources_1/imports/new/ControlSystem.v:2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 301.926 ; gain = 129.902
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 306.219 ; gain = 133.543
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -46,36 +47,36 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 301.926 ; gain = 129.902
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 306.219 ; gain = 133.543
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Digital-logic-master/Nexys4DDR_Master.xdc]
-Finished Parsing XDC File [D:/Digital-logic-master/Nexys4DDR_Master.xdc]
+Parsing XDC File [C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 617.223 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 620.430 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 7 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 7 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -86,8 +87,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 13 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 13 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 13 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 13 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -98,8 +99,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 14 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 14 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 14 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 14 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -110,8 +111,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 15 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 15 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 15 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 15 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -122,8 +123,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 33 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 33 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 19 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 19 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -134,8 +135,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 34 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 34 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 20 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 20 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -146,8 +147,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 35 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 35 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 21 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 21 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -158,8 +159,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 36 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 36 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 22 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 22 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -170,8 +171,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 37 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 37 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 23 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 23 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -182,8 +183,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 38 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 38 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 24 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 24 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -194,8 +195,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 39 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 39 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 25 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 25 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -206,8 +207,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 40 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 40 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 26 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 26 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -218,8 +219,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 60 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 60 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 30 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 30 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -230,8 +231,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 61 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 61 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 31 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 31 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -242,8 +243,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 62 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 62 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 32 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 32 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -254,8 +255,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 63 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 63 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 33 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 33 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -266,8 +267,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 64 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 64 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 34 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 34 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -278,8 +279,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 65 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 65 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -290,8 +291,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 66 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 66 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -302,8 +303,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 70 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 70 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -314,8 +315,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 71 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 71 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -326,8 +327,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 72 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 72 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -338,8 +339,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 73 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 73 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -350,8 +351,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 74 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 74 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -362,8 +363,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 75 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 75 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -374,8 +375,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 76 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 76 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -386,8 +387,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 77 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 77 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -398,8 +399,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 84 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 84 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 51 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 51 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -410,8 +411,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 86 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 86 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 52 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 52 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -422,8 +423,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 87 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 87 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 53 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 53 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -435,20 +436,18 @@ Usage:
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "an" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "led_count" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "Reset" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "sec" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "sec" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5546] ROM "next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -478,20 +477,20 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 4     
 	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 28    
-	   8 Input     32 Bit        Muxes := 2     
-	   8 Input      8 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 32    
+	   8 Input     32 Bit        Muxes := 1     
+	   9 Input      8 Bit        Muxes := 1     
 	  11 Input      7 Bit        Muxes := 4     
 	   5 Input      7 Bit        Muxes := 1     
 	   7 Input      7 Bit        Muxes := 2     
 	   2 Input      6 Bit        Muxes := 42    
-	   2 Input      5 Bit        Muxes := 60    
+	   2 Input      5 Bit        Muxes := 43    
 	   3 Input      4 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 5     
-	   2 Input      3 Bit        Muxes := 90    
-	   7 Input      3 Bit        Muxes := 30    
-	  10 Input      3 Bit        Muxes := 2     
-	   9 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 99    
+	   7 Input      3 Bit        Muxes := 32    
+	  10 Input      3 Bit        Muxes := 4     
+	   9 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 65    
 	   4 Input      2 Bit        Muxes := 12    
@@ -526,20 +525,20 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 4     
 	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 28    
-	   8 Input     32 Bit        Muxes := 2     
-	   8 Input      8 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 32    
+	   8 Input     32 Bit        Muxes := 1     
+	   9 Input      8 Bit        Muxes := 1     
 	  11 Input      7 Bit        Muxes := 4     
 	   5 Input      7 Bit        Muxes := 1     
 	   7 Input      7 Bit        Muxes := 2     
 	   2 Input      6 Bit        Muxes := 42    
-	   2 Input      5 Bit        Muxes := 60    
+	   2 Input      5 Bit        Muxes := 43    
 	   3 Input      4 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 5     
-	   2 Input      3 Bit        Muxes := 90    
-	   7 Input      3 Bit        Muxes := 30    
-	  10 Input      3 Bit        Muxes := 2     
-	   9 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 99    
+	   7 Input      3 Bit        Muxes := 32    
+	  10 Input      3 Bit        Muxes := 4     
+	   9 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 65    
 	   4 Input      2 Bit        Muxes := 12    
@@ -559,22 +558,18 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 617.223 ; gain = 445.199
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "sec" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "sec" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "Reset" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5546] ROM "an" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "led_count" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 620.430 ; gain = 447.754
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 617.223 ; gain = 445.199
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 620.430 ; gain = 447.754
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -584,29 +579,25 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_4/\b_time_reg[31] )
-WARNING: [Synth 8-3332] Sequential element (\b_time_reg[29] ) is unused and will be removed from module MainSystem.
-WARNING: [Synth 8-3332] Sequential element (\b_time_reg[30] ) is unused and will be removed from module MainSystem.
-WARNING: [Synth 8-3332] Sequential element (\b_time_reg[31] ) is unused and will be removed from module MainSystem.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 619.629 ; gain = 447.605
+Finished Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 630.711 ; gain = 458.035
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 619.629 ; gain = 447.605
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 630.711 ; gain = 458.035
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 619.629 ; gain = 447.605
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 630.711 ; gain = 458.035
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 7 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 7 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -617,8 +608,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 13 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 13 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 13 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 13 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -629,8 +620,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 14 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 14 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 14 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 14 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -641,8 +632,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 15 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 15 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 15 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 15 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -653,8 +644,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 33 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 33 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 19 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 19 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -665,8 +656,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 34 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 34 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 20 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 20 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -677,8 +668,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 35 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 35 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 21 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 21 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -689,8 +680,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 36 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 36 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 22 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 22 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -701,8 +692,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 37 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 37 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 23 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 23 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -713,8 +704,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 38 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 38 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 24 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 24 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -725,8 +716,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 39 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 39 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 25 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 25 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -737,8 +728,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 40 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 40 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 26 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 26 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -749,8 +740,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 60 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 60 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 30 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 30 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -761,8 +752,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 61 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 61 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 31 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 31 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -773,8 +764,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 62 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 62 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 32 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 32 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -785,8 +776,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 63 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 63 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 33 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 33 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -797,8 +788,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 64 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 64 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 34 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 34 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -809,8 +800,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 65 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 65 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -821,8 +812,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 66 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 66 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -833,8 +824,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 70 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 70 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -845,8 +836,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 71 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 71 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -857,8 +848,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 72 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 72 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -869,8 +860,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 73 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 73 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -881,8 +872,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 74 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 74 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -893,8 +884,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 75 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 75 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -905,8 +896,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 76 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 76 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -917,8 +908,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 77 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 77 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -929,8 +920,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 84 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 84 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 51 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 51 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -941,8 +932,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 86 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 86 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 52 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 52 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -953,8 +944,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 87 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
-incorrect set of required parameters for "set_property" at line 87 of file D:/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect argument "-dict" for "set_property" at line 53 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
+incorrect set of required parameters for "set_property" at line 53 of file C:/Users/ForeverWSD/Desktop/Digital-logic-master/Nexys4DDR_Master.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -966,10 +957,10 @@ Usage:
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 619.813 ; gain = 447.789
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:01:09 . Memory (MB): peak = 630.711 ; gain = 458.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 620.789 ; gain = 448.766
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 630.711 ; gain = 458.035
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -981,7 +972,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:14 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -999,7 +990,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:14 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1012,7 +1003,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:14 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1024,13 +1015,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:15 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Start Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:15 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:15 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1047,33 +1038,32 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    39|
-|3     |LUT1   |    96|
-|4     |LUT2   |   168|
-|5     |LUT3   |    70|
-|6     |LUT4   |    95|
-|7     |LUT5   |   176|
-|8     |LUT6   |   781|
-|9     |MUXF7  |    15|
-|10    |FDRE   |   174|
-|11    |IBUF   |     7|
-|12    |OBUF   |    23|
+|2     |CARRY4 |    40|
+|3     |LUT1   |    95|
+|4     |LUT2   |   153|
+|5     |LUT3   |    64|
+|6     |LUT4   |    96|
+|7     |LUT5   |   156|
+|8     |LUT6   |   598|
+|9     |FDRE   |   177|
+|10    |IBUF   |     7|
+|11    |OBUF   |    23|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |  1645|
+|1     |top      |       |  1410|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:15 . Memory (MB): peak = 697.543 ; gain = 524.867
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 691.906 ; gain = 168.828
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 691.906 ; gain = 519.883
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:01:02 . Memory (MB): peak = 697.543 ; gain = 170.961
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:15 . Memory (MB): peak = 697.543 ; gain = 524.867
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 47 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'MainSystem' is not ideal for floorplanning, since the cellview 'MainSystem' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1082,8 +1072,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-35 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+28 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 691.906 ; gain = 485.309
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 691.906 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 09 16:54:16 2018...
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:13 . Memory (MB): peak = 697.543 ; gain = 487.363
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 697.543 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 10 15:33:48 2018...
