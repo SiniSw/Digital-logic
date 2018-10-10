@@ -26,9 +26,7 @@ module Washing_tb();
     wire [6:0]seg;
     wire [7:0]an;
     wire RL,SPL,XDL,PXL,TSL,BUL,JSL,PSL;
-//    wire [6:0]data_out[0:5];
     parameter DELY=10;
-    parameter LDELY=1000;
     MainSystem WM(Reset,CLK,Control,SP,CWS,seg,an,RL,SPL,XDL,PXL,TSL,BUL,JSL,PSL);
     always #(DELY/2) CLK=~CLK;
     initial begin
