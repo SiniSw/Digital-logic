@@ -30,10 +30,10 @@ module MainSystem(
     parameter drain2=4'b1000;
     parameter dry2  =4'b1001;
     parameter dor   =4'b1111;
-    parameter SEC   =31'd10;   // sec/clk 30000000
+    parameter SEC   =31'd10;   // sec/clk 30000000  sim/10
     parameter AN_CLK=16'd1000;
-    parameter LED_CLK=31'd2; //10000000
-    parameter BUL_CLK=31'd2; //20000000
+    parameter LED_CLK=31'd2; //10000000   sim/2
+    parameter BUL_CLK=31'd2; //20000000   sim/2
     reg flag1,flag2;
     reg Control_p;
     reg reset_p;
@@ -90,15 +90,15 @@ module MainSystem(
     always@(posedge flag1)
         begin
             case(an)
-                8'b11111110:begin seg<=data_out[0];an<=8'b01111111; end
-                8'b01111111:begin seg<=data_out[1];an<=8'b10111111; end
-                8'b10111111:begin seg<=7'b1111111; an<=8'b11011111; end
-                8'b11011111:begin seg<=7'b1111111; an<=8'b11101111; end
-                8'b11101111:begin seg<=data_out[2];an<=8'b11110111; end
-                8'b11110111:begin seg<=data_out[3];an<=8'b11111011; end
-                8'b11111011:begin seg<=data_out[4];an<=8'b11111101; end
-                8'b11111101:begin seg<=data_out[5];an<=8'b11111110; end
-                default:begin seg<=7'b1111111;an<=8'b01111111; end
+                8'b11111110:begin seg<=data_out[0];an<={~Reset,7'b1111111}; end
+                8'b01111111:begin seg<=data_out[1];an<={1'b1,~Reset,6'b111111}; end
+                8'b10111111:begin seg<=7'b1111111; an<={2'b11,~Reset,5'b11111}; end
+                8'b11011111:begin seg<=7'b1111111; an<={3'b111,~Reset,4'b1111}; end
+                8'b11101111:begin seg<=data_out[2];an<={4'b1111,~Reset,3'b111}; end
+                8'b11110111:begin seg<=data_out[3];an<={5'b11111,~Reset,2'b11}; end
+                8'b11111011:begin seg<=data_out[4];an<={6'b111111,~Reset,1'b1}; end
+                8'b11111101:begin seg<=data_out[5];an<={7'b1111111,~Reset}; end
+                default:begin seg<=7'b1111111;an<={~Reset,7'b1111111}; end
             endcase
         end
     always@(CWS)
